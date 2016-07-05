@@ -12,7 +12,7 @@ bool fileExist(string Xfile)
 		DWORD file = GetFileAttributesA(Xfile.c_str());
 		if (file==INVALID_FILE_ATTRIBUTES)
 			return false;
-		else return true;
+		else return (file & FILE_ATTRIBUTE_DIRECTORY);
 }
 
 void mkFolder(char primFileName[])
